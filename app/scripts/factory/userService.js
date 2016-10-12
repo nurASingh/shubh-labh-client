@@ -24,7 +24,7 @@
   			this.address = address;
   			this.licence = licence;
   			this.isValid = true;
-  		}.bind(this)
+  		}.bind(this) 
   	};
 
   	data.name = {
@@ -59,5 +59,15 @@
   		}.bind(this)
   	};
 
+	data.user = {
+		get : function(){
+			return { name : this.name,
+					email : this.email, 
+					phone : this.phone ,
+					address : this.address , 
+					licence : this.licence
+					}
+		}.bind(this)
+	};
   	return data;
 });
