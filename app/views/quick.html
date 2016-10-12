@@ -1,0 +1,29 @@
+<form class="form-horizontal" role="form">
+        <h2>Quick Entry</h2>
+        <h3>Welcome{{' ' + name}}</h3>
+        <div class="form-group">
+        <i class="fa fa-rupee" style="font-size:24px"></i>
+            <label for="cash" class="col-sm-3 control-label">Cash</label>
+            <div class="col-sm-9">
+                <input type="number" id="cashId" placeholder="Cash Amount" ng-model="cash" class="form-control" autofocus required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="payment" class="col-sm-3 control-label">Payment</label>
+            <div class="col-sm-9">
+                <input type="number" id="paymentId" placeholder="Payment to party" ng-model="payment" class="form-control" required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="save" class="col-sm-3 control-label">Saving</label>
+            <div class="col-sm-9">
+                <input type="number" id="saveId" placeholder="Saving amount" ng-model ="save" class="form-control" required="true">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="quick-button-group">
+                <button type="button"  ng-click="reset()" class="btn btn-primary">Reset</button>
+                <button type="button" ng-click="next()" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+</form>
