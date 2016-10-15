@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc function
  * @name clientApp.controller:MainCtrl
@@ -8,11 +6,35 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('LoginCtrl', function ($scope,$location,userDataService) {
-    $scope.username = '';
-    $scope.password ='';
-    $scope.login = function(){
-      userDataService.userData.set('Ram Saroj Singh','9936363647','RamSaroj@gmail.com','New Singh Medical Stores CHC Pipraich','UPGKP0987M');
-      $location.path('/quick');
+  .controller('LoginCtrl', function ($scope, $location, userDataService, ajaxService) {
+    $scope.payload = {
+        phone :'',
+        password :''
     };
+
+    $scope.errorMessage = '';
+
+    $scope.login = function () {
+    
+      var successCallback = function (response) {
+        console.log(response);
+        if(response.passed){
+          $location.path('/quick');
+        }else{
+          $scope.errorMessage = 'phone number OR password'
+        }
+      };
+
+      var errorCallback = function (err) {
+        errorMessage = err;
+      };
+
+      ajaxService.login({
+          user: $scope.payload
+        },
+        successCallback,
+        errorCallback
+      );
+    };
+
   });

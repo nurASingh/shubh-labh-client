@@ -12,13 +12,15 @@
   .factory('userDataService', function() {
 
   	var data = {};
-  	this.username = ''; this.isValid = false;
+  	this.name = ''; this.isValid = false;
   	this.phoneNo = ''; this.email ='';
   	this.address = ''; this.licence ='';
+	this.password = '';
 
   	data.userData = {
-  		set : function(name, phone, email,address,licence){
-  			this.username = name;
+  		set : function(name,password, phone, email,address,licence){
+  			this.name = name;
+			this.password = password;
   			this.phone = phone;
   			this.email = email;
   			this.address = address;
@@ -65,7 +67,8 @@
 					email : this.email, 
 					phone : this.phone ,
 					address : this.address , 
-					licence : this.licence
+					licence : this.licence,
+					password : this.password
 					}
 		}.bind(this)
 	};

@@ -1,54 +1,61 @@
-<form class="form-horizontal" role="form">
-                <h4>Registration Form</h4>
-                <div class="form-group">
-                    <label for="firstName" class="col-sm-3 control-label">Full Name</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
-                        <span class="help-block">eg. Arun Kumar Singh</span>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="email" class="col-sm-3 control-label">Email</label>
-                    <div class="col-sm-9">
-                        <input type="email" id="email" placeholder="Email" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="col-sm-3 control-label">Password</label>
-                    <div class="col-sm-9">
-                        <input type="password" id="password" placeholder="Password" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="phone" class="col-sm-3 control-label">phone</label>
-                    <div class="col-sm-9">
-                        <input type="number" id="phone" placeholder="10 digit" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="birthDate" class="col-sm-3 control-label">License</label>
-                    <div class="col-sm-9">
-                        <input type="text" id="license" placeholder="Drug Licence" class="form-control">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="city" class="col-sm-3 control-label">Address</label>
-                    <div class="col-sm-9">
-                    <textarea id = "address" placeholder="Shop address" class="form-control"></textarea>
-                    </div>
-                </div> <!-- /.form-group -->
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <div class="checkbox">
-                            <label>
+<form class="form-horizontal" role="form" ng-show="!message">
+	<h4>Registration Form</h4>
+	<div class="form-group">
+		<label for="firstName" class="col-sm-3 control-label">Full Name</label>
+		<div class="col-sm-9">
+			<input type="text" id="firstName" ng-model="payload['name']" placeholder="Full Name" class="form-control" autofocus>
+			<span class="help-block">eg. Arun Kumar Singh</span>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="email" class="col-sm-3 control-label">Email</label>
+		<div class="col-sm-9">
+			<input type="email" id="email" placeholder="Email" ng-model="payload['email']" class="form-control">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="password" class="col-sm-3 control-label">Password</label>
+		<div class="col-sm-9">
+			<input type="password" ng-model="payload['password']" id="password" placeholder="Password" class="form-control">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="phone" class="col-sm-3 control-label">phone</label>
+		<div class="col-sm-9">
+			<input type="number" ng-model="payload['phone']" id="phone" placeholder="10 digit" class="form-control">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="birthDate" class="col-sm-3 control-label">License</label>
+		<div class="col-sm-9">
+			<input type="text" id="license" ng-model="payload['lecense']" placeholder="Drug Licence" class="form-control">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="city" class="col-sm-3 control-label">Address</label>
+		<div class="col-sm-9">
+			<textarea id="address" ng-model="payload['address']" placeholder="Shop address" class="form-control"></textarea>
+		</div>
+	</div>
+	<!-- /.form-group -->
+	<div class="form-group">
+		<div class="col-sm-9 col-sm-offset-3">
+			<div class="checkbox">
+				<label>
                                 <input type="checkbox">I accept <a href="#">terms</a>
                             </label>
-                        </div>
-                    </div>
-                </div> <!-- /.form-group -->
-                <div class="form-group">
-                    <div class="col-sm-9 col-sm-offset-3">
-                        <button type="submit" class="btn btn-primary btn-block">Register</button>
-                    </div>
-                </div>
-            </form>
+			</div>
+		</div>
+	</div>
+	<!-- /.form-group -->
+	<div class="form-group">
+		<div class="col-sm-9 col-sm-offset-3">
+			<button type="submit" ng-click="register()" class="btn btn-primary btn-block">Register</button>
+		</div>
+	</div>
+</form>
+<div ng-show="message">
+    <h4>Registration Done</h4>
+    <p>{{message}}</p>
+    <a href="#login">Login Now</a>
+</div>

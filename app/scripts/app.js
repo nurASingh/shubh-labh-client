@@ -14,6 +14,7 @@ angular
     'ngResource',
     'ngRoute',
     'ngTouch'
+
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,11 +31,11 @@ angular
       .when('/login', {
         templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
-        controllerAs: 'login'
+        controllerAs: 'about'
       })
       .when('/register', {
         templateUrl: 'views/register.html',
-        controller: 'AboutCtrl',
+        controller: 'RegisterCtrl',
         controllerAs: 'about'
       })
       .when('/report', {
