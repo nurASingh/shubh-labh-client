@@ -58,6 +58,11 @@ angular
         controller: 'PreviewCtrl',
         controllerAs: 'about'
       })
+      .when('/home', {
+        templateUrl: 'views/home.html',
+        controller: 'PreviewCtrl',
+        controllerAs: 'about'
+      })
       .otherwise({
         redirectTo: '/'
       });

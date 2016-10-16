@@ -19,7 +19,7 @@ angular.module('clientApp')
       var successCallback = function (response) {
         console.log(response);
         if(response.passed){
-          $location.path('/quick');
+          $location.path('/home');
         }else{
           $scope.errorMessage = 'phone number OR password'
         }
@@ -36,5 +36,10 @@ angular.module('clientApp')
         errorCallback
       );
     };
+
+    $scope.close = function(){
+      $scope.errorMessage = '';
+    };
+
 
   });
