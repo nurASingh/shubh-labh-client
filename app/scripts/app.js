@@ -60,7 +60,7 @@ angular
       })
       .when('/home', {
         templateUrl: 'views/home.html',
-        controller: 'PreviewCtrl',
+        controller: 'HomeCtrl',
         controllerAs: 'about'
       })
       .otherwise({

@@ -1,20 +1,25 @@
+<div class="alert alert-danger" ng-if="errorMessage" ng-click="close()">
+	<strong>Invalid - </strong> {{errorMessage}}.
+</div>
 
-
-  <div class="alert alert-danger" ng-if="errorMessage" ng-click="close()">
-    <strong>Invalid - </strong> {{errorMessage}}.
+<form name="userForm" ng-submit="login(userForm.$valid)" class="form-signin">
+	<h4 class="form-signin-heading">Please sign in</h4>
+	<div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine && submitted}">
+		<label for="inputEmail" class="sr-only">User name</label>
+		<input name="phone" ng-minlength="10" type="text" id="inputEmail" class="form-control" placeholder="User name" ng-model="payload['phone']"
+			autofocus="" required>
+     <p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine && submitted" class="help-block"> Phone No not correct</p> 
+	</div>
+	<div class="form-group" ng-class="{ 'has-error' : userForm.password.$invalid && !userForm.password.$pristine && submitted }">
+		<label for="inputPassword" class="sr-only">Password</label>
+		<input name="password" type="password" ng-model="payload['password']" id="inputPassword" class="form-control" placeholder="Password" required>
+	 <p ng-show="userForm.password.$invalid && !userForm.password.$pristine && submitted" class="help-block"> Password is required.</p> 
   </div>
-
-<form class="form-signin">
-        <h4 class="form-signin-heading">Please sign in</h4>
-        <label for="inputEmail" class="sr-only">User name</label>
-        <input type="text" id="inputEmail" class="form-control" placeholder="User name" ng-model="payload['phone']" autofocus="" required="true">
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" ng-model = "payload['password']" id="inputPassword" class="form-control" placeholder="Password" required="" required="true">
-        <div class="checkbox">
-          <label>
+	<div class="checkbox">
+		<label>
             <input type="checkbox" value="remember-me"> Remember me
           </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block"  ng-click="login()">Sign in</button>
+	</div>
+	<button type="submit"  class="btn btn-lg btn-primary btn-block">Sign in</button>
 </form>
 <a href="#register">New ? Register</a>

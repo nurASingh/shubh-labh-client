@@ -59,6 +59,16 @@
                     this.cash = cash;
                 }.bind(this)
             };
+
+        data.userData = {
+            set : function(user){
+                this.user = user;
+            },
+            get : function(){
+                return this.user;
+            },
+            user :{}
+        }    
         
 
         return data;
