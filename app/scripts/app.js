@@ -24,7 +24,7 @@ angular
         controllerAs: 'about'
       })
       .when('/cash', {
-        templateUrl: 'views/cash.html',
+        templateUrl: 'views/about.html',
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
