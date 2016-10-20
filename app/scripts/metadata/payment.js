@@ -11,7 +11,8 @@ angular.module('clientApp')
 			    	{
 			    		'label' : 'Purchase',
 			    		'type' : 'number',
-			    		'placeholder' : '12000'
+			    		'placeholder' : '12000',
+						'id' :'purchase'
 			    	},
 			    	{
 			    		'label' : 'Payment',

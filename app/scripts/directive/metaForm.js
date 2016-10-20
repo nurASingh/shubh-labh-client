@@ -12,39 +12,40 @@ angular.module('clientApp')
         return {
             restrict: 'E',
             scope: {
-               metadata : "="
+                metadata: "=",
+                payload: '='
             },
             templateUrl: '../views/metaForm.html',
-            link : function($scope, elem , attrs){
-               
-               $scope.add = function(){
-                 console.log('adding');
-                 var x = {
-        'type' : '3item',
-        'fields' :
-                [       
-                    {
-                        'label' : 'Party Name',
-                        'type' : 'text',
-                        'placeholder' : 'Ashoka Pharma Bhalotia'
-                    },
-                    {
-                        'label' : 'Purchase',
-                        'type' : 'number',
-                        'placeholder' : '12000'
-                    },
-                    {
-                        'label' : 'Payment',
-                        'type' : 'number',
-                        'placeholder' : '6000'
+            link: function ($scope, elem, attrs) {
+
+                $scope.add = function () {
+                    console.log('adding');
+                    var x = {
+                        'type': '3item',
+                        'fields':
+                        [
+                            {
+                                'label': 'Party Name',
+                                'type': 'text',
+                                'placeholder': 'Ashoka Pharma Bhalotia'
+                            },
+                            {
+                                'label': 'Purchase',
+                                'type': 'number',
+                                'placeholder': '12000'
+                            },
+                            {
+                                'label': 'Payment',
+                                'type': 'number',
+                                'placeholder': '6000'
+                            }
+                        ]
                     }
-                ]
-   }
 
                     $scope.metadata.push(x);
-               }
+                }
             }
-            
+
         };
 
     });
