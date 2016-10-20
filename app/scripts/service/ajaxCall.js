@@ -1,5 +1,6 @@
 angular.module('clientApp')
   .service('ajaxService', function (xhr, context,userDataService, selectedData) {
+    
     this.getSales = function (params, successCallback, errorCallback) {
       console.log('getSales');
     };
@@ -17,11 +18,11 @@ angular.module('clientApp')
     };
 
     this.login = function (params, successCallback, errorCallback) {
-      xhr.post(context.login , params,successCallback, errorCallback);
+      xhr.post(context.login ,selectedData.header.get(), params,successCallback, errorCallback);
     };
 
     this.register = function (params, successCallback, errorCallback) {
-      xhr.post(context.register , params,successCallback, errorCallback);
+      xhr.post(context.register ,selectedData.header.get(), params,successCallback, errorCallback);
     };
 
     this.updateUser = function (params, successCallback, errorCallback) {

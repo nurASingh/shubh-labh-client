@@ -1,3 +1,6 @@
+<div class="alert alert-danger" ng-if="errorMessage" ng-click="close()">
+ {{errorMessage}}.
+</div>
 <form name="registrationForm" ng-submit="register(registrationForm.$valid)" class="form-horizontal" role="form" ng-show="!message">
 	<h4>Registration Form</h4>
 	<div class="form-group">
@@ -55,7 +58,8 @@
 	</div>
 </form>
 <div ng-show="message">
-    <h4>Registration Done</h4>
-    <p>{{message}}</p>
+	<div class="alert alert-success" ng-if="message" ng-click="close()">
+ 		{{message}}.
+	</div>
     <a href="#login">Login Now</a>
 </div>

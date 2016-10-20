@@ -24,8 +24,8 @@ angular.module('clientApp')
     $scope.register = function () {
 
       var successCallback = function (response) {
-        if (response.passed) {
-           $scope.errorMessage = '';
+        if (response.success) {
+          $scope.errorMessage = '';
           $scope.message = response.message;
         } else {
           $scope.errorMessage = response.message

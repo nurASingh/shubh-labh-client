@@ -8,7 +8,7 @@
 angular.module('clientApp')
   .controller('LoginCtrl', function ($scope, $location,selectedData, userDataService, ajaxService) {
     $scope.payload = {
-        phone :null,
+        username :null,
         password :null
     };
 
@@ -22,8 +22,9 @@ angular.module('clientApp')
     
       var successCallback = function (response) {
         console.log(response);
-        if(response.passed){
-          selectedData.userData.set(response.result);
+        if(response.success){
+          selectedData.header.set(response.token ,response.user.phone);
+          selectedData.userData.set(response.user);
           $location.path('/home');
         }else{
           $scope.errorMessage = 'phone number OR password'
@@ -34,9 +35,9 @@ angular.module('clientApp')
         errorMessage = err;
       };
 
-      ajaxService.login({
-          user: $scope.payload
-        },
+      ajaxService.login(
+          $scope.payload
+        ,
         successCallback,
         errorCallback
       );

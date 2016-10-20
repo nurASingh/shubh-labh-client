@@ -8,15 +8,41 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-    .directive('metaForm', function () {
+    .directive('metaForm', function (payment) {
         return {
             restrict: 'E',
             scope: {
                metadata : "="
             },
             templateUrl: '../views/metaForm.html',
-            link : function(scope, elem , attrs){
+            link : function($scope, elem , attrs){
                
+               $scope.add = function(){
+                 console.log('adding');
+                 var x = {
+        'type' : '3item',
+        'fields' :
+                [       
+                    {
+                        'label' : 'Party Name',
+                        'type' : 'text',
+                        'placeholder' : 'Ashoka Pharma Bhalotia'
+                    },
+                    {
+                        'label' : 'Purchase',
+                        'type' : 'number',
+                        'placeholder' : '12000'
+                    },
+                    {
+                        'label' : 'Payment',
+                        'type' : 'number',
+                        'placeholder' : '6000'
+                    }
+                ]
+   }
+
+                    $scope.metadata.push(x);
+               }
             }
             
         };

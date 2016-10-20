@@ -162,4 +162,47 @@ body {
     width: 100%;
     text-align: center;
     }
+
+    .shubh-labh-panel{
+      background: rgba(187, 241, 187, 0.56);
+      border: #b6bdb6 2px solid;
+      border-radius: 10px;
+      width: 100%;
+      box-shadow: #dde6dd 3px 3px;
+      margin-bottom: 10px;
+      margin-right: 10px;
+      height: 120px;
+      list-style: none;
+      margin-left: -45px;
+    }
+
+    .shubh-labh-panel .item-box {
+      position: relative;
+      float: left;     
+    }
+    .shubh-labh-panel input{
+      margin-bottom:  2px;
+      margin-left :10px;
+    }
+
+    .shubh-labh-panel .number{
+      width: 50%
+    } 
+
+    .shubh-labh-panel .text{
+      width: 100%
+    } 
+
+    .shubh-labh-panel input[type="text"]{
+      width: 80%;
+    }
+
+    .shubh-labh-panel   input[type="number"]{
+      width: 80%;
+    }
+    .shubh-labh-panel label{
+      font-size: 11px;
+      margin-left :10px;
+     
+    }
 }

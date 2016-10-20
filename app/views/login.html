@@ -6,7 +6,7 @@
 	<h4 class="form-signin-heading">Please sign in</h4>
 	<div class="form-group" ng-class="{ 'has-error' : userForm.phone.$invalid && !userForm.phone.$pristine && submitted}">
 		<label for="inputEmail" class="sr-only">User name</label>
-		<input name="phone" ng-minlength="10" type="text" id="inputEmail" class="form-control" placeholder="User name" ng-model="payload['phone']"
+		<input name="phone" ng-minlength="10" type="text" id="inputEmail" class="form-control" placeholder="User name" ng-model="payload['username']"
 			autofocus="" required>
      <p ng-show="userForm.phone.$invalid && !userForm.phone.$pristine && submitted" class="help-block"> Phone No not correct</p> 
 	</div>

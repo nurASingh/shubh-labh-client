@@ -68,6 +68,18 @@
                 return this.user;
             },
             user :{}
+        };
+
+        data.header = {
+            set : function(data , user){
+                this.header = data;
+                this.username = user;
+            },
+            get : function(){
+                return {'x-access-token' : this.header ,'username' : this.username};
+            },
+            header : {},
+            username : {}
         }    
         
 
