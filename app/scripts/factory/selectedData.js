@@ -76,7 +76,7 @@
                 this.username = user;
             },
             get : function(){
-                return {'x-access-token' : this.header ,'username' : this.username};
+                return {'token' : this.header ,'username' : this.username};
             },
             header : {},
             username : {}

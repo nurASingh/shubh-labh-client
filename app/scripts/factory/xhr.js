@@ -2,7 +2,7 @@
 angular.module('clientApp')
 	.factory('xhr', function ($http) {
 		var xhrObj = {};
-
+		
 		xhrObj.get = function (url, header,params, successClb, errorClb) {
 			$http({
 				url: url,
@@ -20,10 +20,11 @@ angular.module('clientApp')
 		};
 
 		xhrObj.post = function (url,header, params, successClb, errorClb) {
+			$http.defaults.headers.common.Authorization = 'token ' + header.token;
 			$http({
 				url: url,
 				method: 'POST',
-				header : header,
+
 				data: params ? params : {},
 				'Content-Type' : 'application/json' 
 			})
