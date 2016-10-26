@@ -23,9 +23,9 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'about'
       })
-      .when('/cash', {
-        templateUrl: 'views/cash.html',
-        controller: 'CashCtrl',
+      .when('/payment', {
+        templateUrl: 'views/payment.html',
+        controller: 'PaymentCtrl',
         controllerAs: 'about'
       })
       .when('/login', {
@@ -38,19 +38,15 @@ angular
         controller: 'RegisterCtrl',
         controllerAs: 'about'
       })
-      .when('/report', {
-        templateUrl: 'views/report.html',
-        controller: 'AboutCtrl',
+      .when('/saving', {
+        templateUrl: 'views/saving.html',
+        controller: 'SavingCtrl',
         controllerAs: 'about'
       })
-      .when('/payment', {
-        templateUrl: 'views/payment.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .when('/quick', {
-        templateUrl: 'views/quick.html',
-        controller: 'AboutCtrl',
+      
+      .when('/expenses', {
+        templateUrl: 'views/otherexpenses.html',
+        controller: 'ExpensesCtrl',
         controllerAs: 'about'
       })
       .when('/preview', {

@@ -6,7 +6,8 @@ angular.module('clientApp')
 					{
 			    		'label' : 'Party Name',
 			    		'type' : 'text',
-			    		'placeholder' : 'Ashoka Pharma Bhalotia'
+			    		'placeholder' : 'Ashoka Pharma Bhalotia',
+						'id' :'partyName'
 			    	},
 			    	{
 			    		'label' : 'Purchase',
@@ -17,7 +18,8 @@ angular.module('clientApp')
 			    	{
 			    		'label' : 'Payment',
 			    		'type' : 'number',
-			    		'placeholder' : '6000'
+			    		'placeholder' : '6000',
+						'id' :'payment'
 			    	}
 		    	]
    } ]);     

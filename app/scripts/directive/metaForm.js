@@ -18,32 +18,24 @@ angular.module('clientApp')
             templateUrl: '../views/metaForm.html',
             link: function ($scope, elem, attrs) {
 
-                $scope.add = function () {
-                    console.log('adding');
-                    var x = {
-                        'type': '3item',
-                        'fields':
-                        [
-                            {
-                                'label': 'Party Name',
-                                'type': 'text',
-                                'placeholder': 'Ashoka Pharma Bhalotia'
-                            },
-                            {
-                                'label': 'Purchase',
-                                'type': 'number',
-                                'placeholder': '12000'
-                            },
-                            {
-                                'label': 'Payment',
-                                'type': 'number',
-                                'placeholder': '6000'
-                            }
-                        ]
-                    }
-
+                $scope.add = function (i,item) {
+                    item.add = !item.add;
+                    var x =  _.clone($scope.metadata[0]);
+                    x['id'] = i;
                     $scope.metadata.push(x);
-                }
+               // $scope.payload[i+1] = {};
+                };
+
+                $scope.remove = function(item,index){
+                    console.log(item + '-' + index);
+                };
+
+                $scope.initPayLoad = function(i,fields){
+                   for(var field in fields){
+                       console.log(field);
+                   }
+                   // this.payload[index] = {};
+                }.bind($scope);
             }
 
         };

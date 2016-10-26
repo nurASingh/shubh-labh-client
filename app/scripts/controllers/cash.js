@@ -13,6 +13,6 @@ angular.module('clientApp')
       $scope.payload = [{
         partyname : "",
         payment :'',
-        parchase : ''
+        purchase : ''
       }];
   });

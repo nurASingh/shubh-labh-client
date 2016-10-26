@@ -9,7 +9,9 @@ body {
   padding: 0;
 }
 
+
 /* Everything but the jumbotron gets side spacing for mobile first views */
+
 .header,
 .marketing,
 .footer {
@@ -17,12 +19,17 @@ body {
   padding-right: 15px;
 }
 
+
 /* Custom page header */
+
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
 }
+
+
 /* Make the masthead heading the same height as the navigation */
+
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -30,41 +37,50 @@ body {
   padding-bottom: 19px;
 }
 
+
 /* Custom page footer */
+
 .footer {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
 
-.container-narrow > hr {
+.container-narrow>hr {
   margin: 30px 0;
 }
 
+
 /* Main marketing message and sign up button */
+
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
 }
+
 .jumbotron .btn {
   font-size: 21px;
   padding: 14px 24px;
 }
 
+
 /* Supporting marketing content */
+
 .marketing {
   margin: 40px 0;
 }
-.marketing p + h4 {
+
+.marketing p+h4 {
   margin-top: 28px;
 }
 
+
 /* Responsive: Portrait tablets and up */
+
 @media screen and (min-width: 768px) {
   .container {
     max-width: 730px;
   }
-
   /* Remove the padding we set earlier */
   .header,
   .marketing,
@@ -80,129 +96,134 @@ body {
   .jumbotron {
     border-bottom: 0;
   }
-
-  .form-signin{
+  .form-signin {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
-    }
-        .form-signin input{
-      margin: 5px;
-    }
+  }
+  .form-signin input {
+    margin: 5px;
+  }
 }
 
 @media screen and (max-width: 767px) {
-
-    .form-signin{
+  .form-signin {
     max-width: 330px;
     padding: 15px;
     margin: 0 auto;
-    }
-
-    .form-signin input{
-      margin: 5px;
-    }
-
-    .quick-button-group{
-      margin-left: 30%;
-    }
-
-    .btn-save{
-      margin-left: 30%;
-    }
-    h4{
-      text-align: center;
-      background: rgba(51,122,183,.5);
-      padding: 10px;
-    }
-
-    .home{
-        width: 100%;
-        height: 100%;
-    }
-
-    .home .buy{
-      background-image: url("/images/Buy.png");
-    }
-    .home .card{
-      background-image: url("/images/Card in Use Filled.png");
-    }
-    .home .checked{
-      background-image: url("/images/Check Filled.png");
-    }
-    .home .money{
-      background-image: url("/images/Money Box Filled.png");
-    }
-    .home .rupee{
-      background-image: url("/images/Rupee Filled.png");
-    }
-    .home .cash{
-      background-image: url("/images/Receive Cash Filled.png");
-    }
-
-    .home .img-icon{
-      height: 100%;
-      width:50%;
-      background-size: 50% 50%;
-      background-repeat: no-repeat;
-      border: #cae0ca solid 1px;
-      background-position: 30px;
-    }
-
-    .home .row-custom{
-      height: 150px;
-      margin: 0px;
-    }
-
-    .home .row-custom  span {
-          position: absolute;
+  }
+  .form-signin input {
+    margin: 5px;
+  }
+  .quick-button-group {
+    margin-left: 30%;
+  }
+  .btn-save {
+    margin-left: 30%;
+  }
+  h4 {
+    text-align: center;
+    background: rgba(51, 122, 183, .5);
+    padding: 10px;
+  }
+  .home {
+    width: 100%;
+    height: 100%;
+  }
+  .home .buy {
+    background-image: url("/images/Buy.png");
+  }
+  .home .card {
+    background-image: url("/images/Card in Use Filled.png");
+  }
+  .home .checked {
+    background-image: url("/images/Check Filled.png");
+  }
+  .home .money {
+    background-image: url("/images/Money Box Filled.png");
+  }
+  .home .rupee {
+    background-image: url("/images/Rupee Filled.png");
+  }
+  .home .cash {
+    background-image: url("/images/Receive Cash Filled.png");
+  }
+  .home .img-icon {
+    height: 100%;
+    width: 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border: #cae0ca solid 1px;
+    background-position: 30px;
+  }
+  .home .row-custom {
+    height: 150px;
+    margin: 0px;
+  }
+  .home .row-custom span {
+    position: absolute;
     top: 80%;
     align-self: center;
     left: -4%;
     width: 100%;
     text-align: center;
-    }
+  }
+  .shubh-labh-panel {
+    background: rgba(187, 241, 187, 0.56);
+    border: #b6bdb6 2px solid;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: #dde6dd 3px 3px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    height: 120px;
+    list-style: none;
+    margin-left: -45px;
+  }
+  
+  .custom-height {
+    height: 70px;
+  }
+  
+  .shubh-labh-panel .item-box {
+    position: relative;
+    float: left;
+  }
+  .shubh-labh-panel input {
+    margin-bottom: 2px;
+    margin-left: 10px;
+  }
+  .shubh-labh-panel .number {
+    width: 50%
+  }
+  .shubh-labh-panel .text {
+    width: 100%
+  }
+  .shubh-labh-panel input[type="text"] {
+    width: 80%;
+  }
+  .shubh-labh-panel input[type="number"] {
+    width: 80%;
+  }
+  .shubh-labh-panel label {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+  .shubh-labh-panel .btn-add-more {
+    width: 50px;
+    height: 29px;
+    position: relative;
+    margin-left: 101%;
+    margin-top: 40px;
+  }
+  .shubh-labh-panel .btn-add-more button {
+    background: rgba(187, 241, 187, 0.56);
+  }
 
-    .shubh-labh-panel{
-      background: rgba(187, 241, 187, 0.56);
-      border: #b6bdb6 2px solid;
-      border-radius: 10px;
-      width: 100%;
-      box-shadow: #dde6dd 3px 3px;
-      margin-bottom: 10px;
-      margin-right: 10px;
-      height: 120px;
-      list-style: none;
-      margin-left: -45px;
-    }
-
-    .shubh-labh-panel .item-box {
-      position: relative;
-      float: left;     
-    }
-    .shubh-labh-panel input{
-      margin-bottom:  2px;
-      margin-left :10px;
-    }
-
-    .shubh-labh-panel .number{
-      width: 50%
-    } 
-
-    .shubh-labh-panel .text{
-      width: 100%
-    } 
-
-    .shubh-labh-panel input[type="text"]{
-      width: 80%;
-    }
-
-    .shubh-labh-panel   input[type="number"]{
-      width: 80%;
-    }
-    .shubh-labh-panel label{
-      font-size: 11px;
-      margin-left :10px;
-     
-    }
+   .btn-header{
+        position: relative;
+    height: 50px;
+    border-bottom: 1px solid rgba(145, 199, 145, 0.82);
+    margin-bottom: 30px;
+  }
 }

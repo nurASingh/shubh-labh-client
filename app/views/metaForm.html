@@ -1,17 +1,45 @@
 <form name="metaForm" class="form-meta">
 	<ul >
-		<li class="shubh-labh-panel" ng-repeat="item in metadata" ng-if="item.type == '3item'">
+		<li class="shubh-labh-panel" ng-repeat="item  in metadata track by $index" ng-init="i = $index ; payload[i] = {}" ng-if="item.type == '3item'">			
 			<div ng-repeat="field in item.fields">
 				<div class="item-box text" ng-if="field.type=='text'">
-				<label>{{field.label}} </label>
-				<input type="text" placeholder="{{field.placeholder}}">
+					<label>{{field.label}} </label>
+					<input type="text" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 				<div class="item-box number" ng-if="field.type=='number'">
 					<label>{{field.label}} </label>
-					<input type="number"  placeholder="{{field.placeholder}}">
+					<input type="number" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
 				</div>
 			</div>
-			<button ng-click="add()">Click</button>
+			<div class="btn-add-more" ng-init = "item.add = true">
+				<button type="button" ng-click = "add(i,item)" class="btn btn-default btn-sm " ng-if="item.add">
+          			<span class="glyphicon glyphicon-plus"></span> Add
+        		</button>
+				<button type="button" ng-click = "remove(i,item)" class="btn btn-default btn-sm " ng-if="!item.add">
+          			<span class="glyphicon glyphicon-minus"></span> Del
+        		</button>
+			</div>
+		</li>
+
+		<li class="shubh-labh-panel custom-height"  ng-repeat="item  in metadata track by $index" ng-init="i = $index ; payload[i] = {}" ng-if="item.type == '2item'">			
+			<div ng-repeat="field in item.fields">
+				<div class="item-box number " ng-if="field.type=='text'">
+					<label>{{field.label}} </label>
+					<input type="{{field.type}}" ng-model = "payload[$index][field.id]" placeholder="{{field.placeholder}}">
+				</div>
+				<div class="item-box number" ng-if="field.type=='number'">
+					<label>{{field.label}} </label>
+					<input type="{{field.type}}" ng-model = "payload[$index][field.id]"  placeholder="{{field.placeholder}}">
+				</div>
+			</div>
+			<div class="btn-add-more" ng-init = "item.add = true">
+				<button type="button" ng-click = "add(i,item)" class="btn btn-default btn-sm " ng-if="item.add">
+          			<span class="glyphicon glyphicon-plus"></span> Add
+        		</button>
+				<button type="button" ng-click = "remove(i,item)" class="btn btn-default btn-sm " ng-if="!item.add">
+          			<span class="glyphicon glyphicon-minus"></span> Del
+        		</button>
+			</div>
 		</li>
 	</ul>
 </form>
