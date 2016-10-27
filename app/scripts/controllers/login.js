@@ -14,6 +14,14 @@ angular.module('clientApp')
 
     $scope.errorMessage = '';
     $scope.submitted = false;
+
+    if(window.localStorage.response){
+      var response = angular.fromJson(window.localStorage.response);
+          selectedData.header.set(response.token ,response.user.phone);
+          selectedData.userData.set(response.user);
+          $location.path('/home');
+    }
+
     $scope.login = function (valid) {
       if(!valid){
         $scope.submitted = true;
@@ -25,6 +33,7 @@ angular.module('clientApp')
         if(response.success){
           selectedData.header.set(response.token ,response.user.phone);
           selectedData.userData.set(response.user);
+          window.localStorage.response =  angular.toJson(response,true);
           $location.path('/home');
         }else{
           $scope.errorMessage = 'phone number OR password'

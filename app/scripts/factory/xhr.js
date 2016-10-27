@@ -20,13 +20,15 @@ angular.module('clientApp')
 		};
 
 		xhrObj.post = function (url,header, params, successClb, errorClb) {
-			$http.defaults.headers.common.Authorization = 'token ' + header.token;
+			console.log(header.token);
 			$http({
+
 				url: url,
 				method: 'POST',
-
-				data: params ? params : {},
-				'Content-Type' : 'application/json' 
+				headers : {
+					'x-access-token' : header.token
+				},
+				data: params ? params : {}
 			})
 			.then(function successCallback(response) {
 				if (successClb) {
@@ -39,10 +41,13 @@ angular.module('clientApp')
 
 
 		xhrObj.put = function (url, header,params, successClb, errorClb) {
+			
 			$http({
 				url: url,
 				method: 'PUT',
-				header : header,
+				headers : {
+					'x-access-token' : header.token
+				},
 				data: params ? params : {}
 			})
 			.then(function successCallback(response) {
