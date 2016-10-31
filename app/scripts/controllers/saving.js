@@ -8,18 +8,37 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('SavingCtrl', function ($scope, selectedData, saving) {
+  .controller('SavingCtrl', function ($scope, selectedData, saving,ajaxService) {
     $scope.metadata = saving;
     $scope.payload = [{
       type: "",
       amount: '',
     }];
-    $scope.clear = function () {
+      $scope.clear = function () {
       console.log($scope.metadata);
+      delete $scope.metadata;
+      $scope.metadata = payment;
+      console.log($scope.metadata);
+      $scope.payload = [{
+        name: "",
+        payment: '',
+        purchase: ''
+      }];
     };
 
     $scope.save = function () {
       // http call
-      console.log($scope.payload);
+      var date = new Date();
+      var dataTosend = {
+        date : date,
+        comment :'this is comment',
+        payments :  $scope.payload
+
+      };
+      ajaxService.postSaving({saving : dataTosend}, function(res){
+        console.log(res);
+      }, function(err){
+        console.log(err);
+      });
     };
   });

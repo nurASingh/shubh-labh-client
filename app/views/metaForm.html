@@ -25,11 +25,11 @@
 			<div ng-repeat="field in item.fields">
 				<div class="item-box number " ng-if="field.type=='text'">
 					<label>{{field.label}} </label>
-					<input type="{{field.type}}" ng-model = "payload[$index][field.id]" placeholder="{{field.placeholder}}">
+					<input type="{{field.type}}" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 				<div class="item-box number" ng-if="field.type=='number'">
 					<label>{{field.label}} </label>
-					<input type="{{field.type}}" ng-model = "payload[$index][field.id]"  placeholder="{{field.placeholder}}">
+					<input type="{{field.type}}" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
 				</div>
 			</div>
 			<div class="btn-add-more" ng-init = "item.add = true">
