@@ -1,0 +1,57 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Sale Summary</div>
+  <div class="panel-body">
+    <p>10 Jan 2016</p>
+  </div>
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Payment</td>
+        <td>{{totalPayment}}</td>
+        <td>Total Payment</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Saving</td>
+        <td>{{totalSaving}}</td>
+        <td>Total Saving</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Other expenses</td>
+        <td>{{totalExpenses}}</td>
+        <td>Total expenses</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Purchase</td>
+        <td>{{totalPurchase}}</td>
+        <td>Total Purchase</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class= "sale-cash">
+    <span>Today's Cash</span>
+    <input type="number" value="2400" ng-model="totalCash"/>
+</div>
+
+<div class= "total-sale">
+    <span>Total Sale</span>
+    <input type="number" value="{{totalCash + totalSaving + totalExpenses + totalPayment}}"  readonly disabled="true"/>
+</div>
+  <div class= "btn-header">
+     <button style="float: left" ng-click="clear()" class="btn btn-primary">Clear</button>
+     <button style="float: right" ng-click="save()" class="btn btn-primary">Done</button>
+ </div>

@@ -36,7 +36,7 @@ angular.module('clientApp')
         payments :  $scope.payload
 
       };
-      ajaxService.postPayment({saving : dataTosend}, function(res){
+      ajaxService.postPayment({payment : dataTosend}, function(res){
         console.log(res);
       }, function(err){
         console.log(err);

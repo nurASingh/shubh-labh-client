@@ -16,10 +16,10 @@ angular
     'ngTouch'
 
   ])
-  .config(function ($routeProvider,$httpProvider) {
+  .config(function ($routeProvider, $httpProvider) {
     $routeProvider
       .when('/', {
-       templateUrl: 'views/login.html',
+        templateUrl: 'views/login.html',
         controller: 'LoginCtrl',
         controllerAs: 'about'
       })
@@ -43,7 +43,6 @@ angular
         controller: 'SavingCtrl',
         controllerAs: 'about'
       })
-      
       .when('/expenses', {
         templateUrl: 'views/otherexpenses.html',
         controller: 'ExpensesCtrl',
@@ -59,7 +58,18 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'about'
       })
+      .when('/cash', {
+        templateUrl: 'views/cash.html',
+        controller: 'CashCtrl',
+        controllerAs: 'about'
+      })
+      .when('/sale', {
+        templateUrl: 'views/sale.html',
+        controller: 'SaleCtrl',
+        controllerAs: 'about'
+      })
       .otherwise({
         redirectTo: '/'
       });
   });
+

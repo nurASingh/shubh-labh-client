@@ -8,8 +8,8 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('CashCtrl', function ($scope,selectedData,payment,ajaxService) {
-  		$scope.metadata = payment;
+  .controller('CashCtrl', function ($scope,selectedData,cash,ajaxService) {
+  		$scope.metadata = cash;
       $scope.payload = [{
         partyname : "",
         payment :''
@@ -24,7 +24,7 @@ angular.module('clientApp')
         payments :  $scope.payload
 
       };
-      ajaxService.postPayment({payment : dataTosend}, function(res){
+      ajaxService.postCash({cash : dataTosend}, function(res){
         console.log(res);
       }, function(err){
         console.log(err);

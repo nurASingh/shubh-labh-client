@@ -75,4 +75,27 @@ angular.module('clientApp')
       xhr.put(context.getExpense,selectedData.header.get(),params,successCallback, errorCallback);
     };
 
+    this.getCash = function (params, successCallback, errorCallback) {
+      xhr.get(context.getCash,selectedData.header.get(),params,successCallback, errorCallback);
+    };
+
+    this.postCash = function (params, successCallback, errorCallback) {
+      xhr.post(context.postCash,selectedData.header.get(),params,successCallback, errorCallback);
+    };
+
+    this.updateCash = function (params, successCallback, errorCallback) {
+      xhr.put(context.updateCash,selectedData.header.get(),params,successCallback, errorCallback);
+    };
+    this.getSale = function (params, successCallback, errorCallback) {
+      xhr.get(context.getSale,selectedData.header.get(),params,successCallback, errorCallback);
+    };
+
+    this.postSale = function (params, successCallback, errorCallback) {
+      xhr.post(context.postSale,selectedData.header.get(),params,successCallback, errorCallback);
+    };
+
+    this.updateSale = function (params, successCallback, errorCallback) {
+      xhr.put(context.updateSale,selectedData.header.get(),params,successCallback, errorCallback);
+    };
+
   });

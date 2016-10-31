@@ -15,4 +15,7 @@ angular.module('clientApp')
         getExpense : flag ? local + 'expense' : server + 'expense',
         postExpense : flag ? local + 'expense' : server + 'expense',
         updateExpense : flag ? local + 'expense' : server + 'expense',
+        getCash : flag ? local + 'cash' : server + 'cash',
+        postCash : flag ? local + 'cash' : server + 'cash',
+        updateCash : flag ? local + 'cash' : server + 'cash',
     });
