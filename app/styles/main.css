@@ -5,8 +5,9 @@
   padding: 0.2em 0;
 }
 
+
 body {
-  padding: 0;
+  padding: 0;  
 }
 
 
@@ -41,7 +42,7 @@ body {
 /* Custom page footer */
 
 .footer {
-  padding-top: 19px;
+  margin-top: 25px;
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
@@ -79,7 +80,11 @@ body {
 
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    max-width: 400px;
+  }
+  body{
+    max-width: 400px;
+    margin-left:35%; 
   }
   /* Remove the padding we set earlier */
   .header,
@@ -103,6 +108,125 @@ body {
   }
   .form-signin input {
     margin: 5px;
+  }
+
+  #newUser{
+    margin-left: 400px;
+  }
+  .home {
+    width: 100%;
+    height: 100%;
+  }
+  .home .buy {
+    background-image: url("/images/Buy.png");
+  }
+  .home .card {
+    background-image: url("/images/Card in Use Filled.png");
+  }
+  .home .checked {
+    background-image: url("/images/Check Filled.png");
+  }
+  .home .money {
+    background-image: url("/images/Money Box Filled.png");
+  }
+  .home .rupee {
+    background-image: url("/images/Rupee Filled.png");
+  }
+  .home .cash {
+    background-image: url("/images/Receive Cash Filled.png");
+  }
+  .home .img-icon {
+    height: 100%;
+    width: 50%;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    border: #cae0ca solid 1px;
+    background-position: 30px;
+  }
+  .home .row-custom {
+    height: 150px;
+    margin: 0px;
+  }
+  .home .row-custom span {
+    position: absolute;
+    top: 80%;
+    align-self: center;
+    left: -4%;
+    width: 100%;
+    text-align: center;
+  }
+  .shubh-labh-panel {
+    background: rgba(187, 241, 187, 0.56);
+    border: #b6bdb6 2px solid;
+    border-radius: 10px;
+    width: 100%;
+    box-shadow: #dde6dd 3px 3px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    height: 120px;
+    list-style: none;
+    margin-left: -45px;
+  }
+  
+  .custom-height {
+    height: 70px;
+  }
+  
+  .shubh-labh-panel .item-box {
+    position: relative;
+    float: left;
+  }
+  .shubh-labh-panel input {
+    margin-bottom: 2px;
+    margin-left: 10px;
+  }
+  .shubh-labh-panel .number {
+    width: 50%
+  }
+  .shubh-labh-panel .text {
+    width: 100%
+  }
+  .shubh-labh-panel input[type="text"] {
+    width: 80%;
+  }
+  .shubh-labh-panel input[type="number"] {
+    width: 80%;
+  }
+  .shubh-labh-panel label {
+    font-size: 11px;
+    margin-left: 10px;
+  }
+  .shubh-labh-panel .btn-add-more {
+    width: 50px;
+    height: 29px;
+    position: relative;
+    margin-left: 101%;
+    margin-top: 40px;
+  }
+  .shubh-labh-panel .btn-add-more button {
+    background: rgba(187, 241, 187, 0.56);
+  }
+
+   .btn-header{
+        position: relative;
+    height: 50px;
+    border-bottom: 1px solid rgba(145, 199, 145, 0.82);
+    margin-bottom: 30px;
+  }
+
+  .sale-cash,.total-sale{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 50px;
+    border: rgba(51, 50, 50, 0.2) 1px solid;
+    padding: 10px;
+  }
+  .sale-cash input[type ="number"]{
+    margin-left: 20px; 
+  }
+
+  .total-sale :nth-child(2){
+    margin-left: 40px; 
   }
 }
 
@@ -228,7 +352,8 @@ body {
   }
 
   .sale-cash,.total-sale{
-    margin: 10px;
+     margin-top: 10px;
+    margin-bottom: 10px;
     height: 50px;
     border: rgba(51, 50, 50, 0.2) 1px solid;
     padding: 10px;
