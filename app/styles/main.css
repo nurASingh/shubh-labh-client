@@ -85,6 +85,8 @@ body {
   body{
     max-width: 400px;
     margin-left:35%; 
+    border: 1px #c2efb9 solid;
+    margin-top: 5%;
   }
   /* Remove the padding we set earlier */
   .header,

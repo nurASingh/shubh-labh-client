@@ -6,8 +6,8 @@ angular.module('clientApp')
 					{
 			    		'label' : 'Party Name',
 			    		'type' : 'text',
-			    		'placeholder' : 'Ashoka Pharma Bhalotia',
-						'id' :'partyName'
+			    		'placeholder' : 'Ashok Pharma',
+						'id' :'name'
 			    	},
 			    	{
 			    		'label' : 'Purchase',

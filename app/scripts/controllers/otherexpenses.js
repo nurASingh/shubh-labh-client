@@ -9,21 +9,18 @@
  */
 angular.module('clientApp')
   .controller('ExpensesCtrl', function ($scope, selectedData, saving,ajaxService) {
-    $scope.metadata = saving;
+    $scope.metadata = [saving[0]];
     $scope.payload = [{
       type: "",
       amount: '',
     }];
      $scope.clear = function () {
-      console.log($scope.metadata);
       delete $scope.metadata;
-      $scope.metadata = payment;
-      console.log($scope.metadata);
+      $scope.metadata = [saving[0]];
       $scope.payload = [{
-        name: "",
-        payment: '',
-        purchase: ''
-      }];
+      type: "",
+      amount: '',
+    }];
     };
 
     $scope.save = function () {

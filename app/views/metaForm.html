@@ -4,11 +4,11 @@
 			<div ng-repeat="field in item.fields">
 				<div class="item-box text" ng-if="field.type=='text'">
 					<label>{{field.label}} </label>
-					<input type="text" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
+					<input ng-readonly="isEdit" type="text" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 				<div class="item-box number" ng-if="field.type=='number'">
 					<label>{{field.label}} </label>
-					<input type="number" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
+					<input ng-readonly="isEdit" type="number" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
 				</div>
 			</div>
 			<div class="btn-add-more" ng-init = "item.add = true">
@@ -25,11 +25,11 @@
 			<div ng-repeat="field in item.fields">
 				<div class="item-box number " ng-if="field.type=='text'">
 					<label>{{field.label}} </label>
-					<input type="{{field.type}}" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
+					<input ng-readonly="isEdit" type="{{field.type}}" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 				<div class="item-box number" ng-if="field.type=='number'">
 					<label>{{field.label}} </label>
-					<input type="{{field.type}}" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
+					<input ng-readonly="isEdit" type="{{field.type}}" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
 				</div>
 			</div>
 			<div class="btn-add-more" ng-init = "item.add = true">

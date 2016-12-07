@@ -8,25 +8,37 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('CashCtrl', function ($scope,selectedData,cash,ajaxService) {
-  		$scope.metadata = cash;
-      $scope.payload = [{
-        partyname : "",
-        payment :''
-      }];
+  .controller('CashCtrl', function ($scope, selectedData, cash, ajaxService) {
+    $scope.metadata = [cash[0]];
+    $scope.payload = [{
+      partyname: "",
+      payment: ''
+    }];
 
-      $scope.save = function () {
+    $scope.save = function () {
       // http call
       var date = new Date();
       var dataTosend = {
-        date : date,
-        comment :'this is comment',
-        payments :  $scope.payload
+        date: date,
+        comment: 'this is comment',
+        payments: $scope.payload
 
       };
-      ajaxService.postCash({cash : dataTosend}, function(res){
+
+      $scope.clear = function () {
+        console.log($scope.metadata);
+        delete $scope.metadata;
+        console.log($scope.metadata);
+        $scope.metadata = [cash[0]];
+        $scope.payload = [{
+          partyname: "",
+          payment: ''
+        }];
+      };
+
+      ajaxService.postCash({ cash: dataTosend }, function (res) {
         console.log(res);
-      }, function(err){
+      }, function (err) {
         console.log(err);
       });
     };

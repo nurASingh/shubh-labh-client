@@ -13,7 +13,8 @@ angular.module('clientApp')
             restrict: 'E',
             scope: {
                 metadata: "=",
-                payload: '='
+                payload: '=',
+                isEdit: '='
             },
             templateUrl: '../views/metaForm.html',
             link: function ($scope, elem, attrs) {

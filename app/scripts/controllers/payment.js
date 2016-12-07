@@ -9,17 +9,20 @@
  */
 angular.module('clientApp')
   .controller('PaymentCtrl', function ($scope, selectedData, payment,ajaxService) {
-    $scope.metadata = payment;
+    delete $scope.metadata;
+    $scope.metadata = [payment[0]];
+    $scope.isEdit = false;
     $scope.payload = [{
-      partyname: "",
+      name: "",
       payment: '',
       purchase: ''
     }];
     $scope.clear = function () {
       console.log($scope.metadata);
       delete $scope.metadata;
-      $scope.metadata = payment;
+      //$scope.metadata = payment;
       console.log($scope.metadata);
+      $scope.metadata = [payment[0]];
       $scope.payload = [{
         name: "",
         payment: '',
@@ -38,8 +41,10 @@ angular.module('clientApp')
       };
       ajaxService.postPayment({payment : dataTosend}, function(res){
         console.log(res);
+        $scope.isEdit = true;
       }, function(err){
         console.log(err);
+        $scope.isEdit = false;
       });
     };
   });
