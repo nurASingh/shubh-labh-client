@@ -14,11 +14,11 @@ angular.module('clientApp')
             scope: {
                 metadata: "=",
                 payload: '=',
-                isEdit: '='
+                isedit: '='
             },
             templateUrl: '../views/metaForm.html',
             link: function ($scope, elem, attrs) {
-
+                console.log($scope.isedit);
                 $scope.add = function (i,item) {
                     item.add = !item.add;
                     var x =  _.clone($scope.metadata[0]);
@@ -29,6 +29,7 @@ angular.module('clientApp')
 
                 $scope.remove = function(item,index){
                     console.log(item + '-' + index);
+                    $scope.isEdit = true;
                 };
 
                 $scope.initPayLoad = function(i,fields){

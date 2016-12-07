@@ -11,7 +11,7 @@ angular.module('clientApp')
   .controller('PaymentCtrl', function ($scope, selectedData, payment,ajaxService) {
     delete $scope.metadata;
     $scope.metadata = [payment[0]];
-    $scope.isEdit = false;
+    $scope.isedit = {val : false};
     $scope.payload = [{
       name: "",
       payment: '',
@@ -41,10 +41,10 @@ angular.module('clientApp')
       };
       ajaxService.postPayment({payment : dataTosend}, function(res){
         console.log(res);
-        $scope.isEdit = true;
+        $scope.isedit.val = true;
       }, function(err){
         console.log(err);
-        $scope.isEdit = false;
+        $scope.isedit = false;
       });
     };
   });
