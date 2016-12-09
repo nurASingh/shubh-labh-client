@@ -17,11 +17,13 @@ angular
 
   ])
   .config(function ($routeProvider, $httpProvider) {
-    function setUserData(selectedData) {
+    function setUserData(selectedData,$location) {
       if (window.localStorage.response) {
         var response = angular.fromJson(window.localStorage.response);
         selectedData.header.set(response.token, response.user.phone);
         selectedData.userData.set(response.user);
+      }else{
+        $location.path('/login');
       }
     }
     $routeProvider
@@ -30,8 +32,8 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-           setUserData(selectedData);
+          data: function (selectedData,$location) {
+           setUserData(selectedData,$location);
           }
         }
       })
@@ -40,8 +42,8 @@ angular
         controller: 'PaymentCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
@@ -50,8 +52,8 @@ angular
         controller: 'LoginCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
@@ -60,8 +62,8 @@ angular
         controller: 'RegisterCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
@@ -70,8 +72,8 @@ angular
         controller: 'SavingCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-           setUserData(selectedData);
+          data: function (selectedData,$location) {
+           setUserData(selectedData,$location);
           }
         }
       })
@@ -80,8 +82,8 @@ angular
         controller: 'ExpensesCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
@@ -90,8 +92,8 @@ angular
         controller: 'PreviewCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
@@ -100,8 +102,8 @@ angular
         controller: 'HomeCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
@@ -110,8 +112,8 @@ angular
         controller: 'CashCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
@@ -120,8 +122,8 @@ angular
         controller: 'SaleCtrl',
         controllerAs: 'about',
         resolve: {
-          data: function (selectedData) {
-            setUserData(selectedData);
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
           }
         }
       })
