@@ -20,9 +20,15 @@ angular.module('clientApp')
 
     $scope.errorMessage = '';
     $scope.message = '';
+     $scope.submitted = false;
 
-    $scope.register = function () {
-
+    $scope.register = function (valid) {
+      if(!valid){
+      //  $scope.errorMessage = 'Invalid Entry';
+       $scope.submitted = true;
+          return;
+      }
+       
       var successCallback = function (response) {
         if (response.success) {
           $scope.errorMessage = '';

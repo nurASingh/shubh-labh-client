@@ -60,12 +60,7 @@ angular
       .when('/register', {
         templateUrl: 'views/register.html',
         controller: 'RegisterCtrl',
-        controllerAs: 'about',
-        resolve: {
-          data: function (selectedData,$location) {
-            setUserData(selectedData,$location);
-          }
-        }
+        controllerAs: 'about'
       })
       .when('/saving', {
         templateUrl: 'views/saving.html',

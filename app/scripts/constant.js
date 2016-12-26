@@ -1,4 +1,4 @@
-var flag = true,
+var flag = false,
     server = 'https://shubhlabh.herokuapp.com/',
     local = 'http://localhost:3000/';
 
