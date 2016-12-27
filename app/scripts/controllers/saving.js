@@ -10,6 +10,7 @@
 angular.module('clientApp')
   .controller('SavingCtrl', function ($scope, selectedData, saving,ajaxService) {
     $scope.metadata = saving;
+    $scope.isedit = {val : false};
     $scope.payload = [{
       type: "",
       amount: '',
@@ -37,7 +38,9 @@ angular.module('clientApp')
       };
       ajaxService.postSaving({saving : dataTosend}, function(res){
         console.log(res);
+        $scope.isedit.val = true;
       }, function(err){
+        $scope.isedit.val = false;
         console.log(err);
       });
     };
