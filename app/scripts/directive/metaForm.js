@@ -21,9 +21,9 @@ angular.module('clientApp')
                 console.log($scope.isedit);
                 $scope.add = function (i,item) {
                     item.add = !item.add;
-                    var x =  _.clone($scope.metadata[0]);
-                    x['id'] = i;
-                    $scope.metadata.push(x);
+                    var next =  _.clone($scope.metadata[0]);
+                    next['id'] = i;
+                    $scope.metadata.push(next);
                // $scope.payload[i+1] = {};
                 };
 

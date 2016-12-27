@@ -18,8 +18,8 @@ angular
   ])
   .config(function ($routeProvider, $httpProvider) {
     function setUserData(selectedData,$location) {
-      if (window.localStorage.response) {
-        var response = angular.fromJson(window.localStorage.response);
+      if (window.sessionStorage.getItem('response')) {
+        var response = angular.fromJson(window.sessionStorage.getItem('response'));
         selectedData.header.set(response.token, response.user.phone);
         selectedData.userData.set(response.user);
       }else{
