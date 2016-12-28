@@ -4,6 +4,7 @@ angular.module('clientApp')
 		var xhrObj = {};
 		
 		xhrObj.get = function (url, header,params, successClb, errorClb) {
+			$('.load-screen').show();
 			$http({
 				url: url,
 				method: 'GET',
@@ -12,15 +13,17 @@ angular.module('clientApp')
 			})
 			.then(function successCallback(response) {
 				if (successClb) {
+					$('.load-screen').hide()
 					successClb(response.data);
 				}
 			}, function errorCallback(response) {
+				$('.load-screen').hide()
 				if (errorClb) { errorClb(response.data); }
 			});
 		};
 
 		xhrObj.post = function (url,header, params, successClb, errorClb) {
-			console.log(header.token);
+			$('.load-screen').show();
 			$http({
 
 				url: url,
@@ -31,17 +34,19 @@ angular.module('clientApp')
 				data: params ? params : {}
 			})
 			.then(function successCallback(response) {
+				$('.load-screen').hide()
 				if (successClb) {
 					successClb(response.data);
 				}
 			}, function errorCallback(response) {
+				$('.load-screen').hide()
 				if (errorClb) { errorClb(response.data); }
 			});
 		};
 
 
 		xhrObj.put = function (url, header,params, successClb, errorClb) {
-			
+			$('.load-screen').show();
 			$http({
 				url: url,
 				method: 'PUT',
@@ -51,16 +56,19 @@ angular.module('clientApp')
 				data: params ? params : {}
 			})
 			.then(function successCallback(response) {
+				$('.load-screen').hide()
 				if (successClb) {
 					successClb(response.data);
 				}
 			}, function errorCallback(response) {
+				$('.load-screen').hide()
 				if (errorClb) { errorClb(response.data); }
 			});
 		};
 
 
 		xhrObj.delete = function (url, header,params, successClb, errorClb) {
+			$('.load-screen').show();
 			$http({
 				url: url,
 				method: 'DELETE',
@@ -68,10 +76,12 @@ angular.module('clientApp')
 				data: params ? params : {}
 			})
 			.then(function successCallback(response) {
+				$('.load-screen').hide()
 				if (successClb) {
 					successClb(response.data);
 				}
 			}, function errorCallback(response) {
+				$('.load-screen').hide()
 				if (errorClb) { errorClb(response.data); }
 			});
 		};

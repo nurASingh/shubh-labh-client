@@ -38,6 +38,7 @@ angular.module('clientApp')
 
       ajaxService.postCash({ cash: dataTosend }, function (res) {
         console.log(res);
+        selectedData.cash.set( $scope.payload);
       }, function (err) {
         console.log(err);
       });

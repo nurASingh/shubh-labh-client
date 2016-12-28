@@ -8,10 +8,10 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('PaymentCtrl', function ($scope, selectedData, payment,ajaxService) {
+  .controller('PaymentCtrl', function ($scope, selectedData, payment, ajaxService) {
     delete $scope.metadata;
     $scope.metadata = [payment[0]];
-    $scope.isedit = {val : false};
+    $scope.isedit = { val: false };
     $scope.payload = [{
       name: "",
       payment: '',
@@ -34,15 +34,16 @@ angular.module('clientApp')
       // http call
       var date = new Date();
       var dataTosend = {
-        date : date,
-        comment :'this is comment',
-        payments :  $scope.payload
-
+        date: date,
+        comment: 'this is comment',
+        payments: $scope.payload
       };
-      ajaxService.postPayment({payment : dataTosend}, function(res){
+      
+      ajaxService.postPayment({ payment: dataTosend }, function (res) {
         console.log(res);
         $scope.isedit.val = true;
-      }, function(err){
+        selectedData.payment.set($scope.payload);
+      }, function (err) {
         console.log(err);
         $scope.isedit = false;
       });

@@ -10,6 +10,7 @@
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="/bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css" />
+    <link rel="stylesheet" href="/bower_components/components-font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -47,7 +48,9 @@
         </div>
       </div>
     </div>
-
+    <div class="load load-screen screen-size" style="display : none">
+<i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    </div>
     <div class="container">
       <div ng-view=""></div>
     </div>

@@ -27,8 +27,8 @@ angular.module('clientApp')
                // $scope.payload[i+1] = {};
                 };
 
-                $scope.remove = function(item,index){
-                    console.log(item + '-' + index);
+                $scope.remove = function(index){
+                    $scope.metadata.splice(index,1)
                     $scope.isEdit = true;
                 };
 

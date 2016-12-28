@@ -34,6 +34,7 @@ angular.module('clientApp')
       };
       ajaxService.postSaving({saving : dataTosend}, function(res){
         console.log(res);
+        selectedData.other.set( $scope.payload);
       }, function(err){
         console.log(err);
       });

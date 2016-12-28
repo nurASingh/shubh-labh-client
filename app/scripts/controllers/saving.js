@@ -18,7 +18,7 @@ angular.module('clientApp')
       $scope.clear = function () {
       console.log($scope.metadata);
       delete $scope.metadata;
-      $scope.metadata = payment;
+      $scope.metadata = saving;
       console.log($scope.metadata);
       $scope.payload = [{
         name: "",
@@ -39,6 +39,7 @@ angular.module('clientApp')
       ajaxService.postSaving({saving : dataTosend}, function(res){
         console.log(res);
         $scope.isedit.val = true;
+        selectedData.save.set( $scope.payload);
       }, function(err){
         $scope.isedit.val = false;
         console.log(err);

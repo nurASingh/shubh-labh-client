@@ -11,5 +11,5 @@ angular.module('clientApp')
   .controller('HomeCtrl', function ($scope,selectedData) {
     $scope.name = selectedData.userData.get().name;
     $scope.address = selectedData.userData.get().address;
-
+    $scope.selectedData = selectedData;
   });

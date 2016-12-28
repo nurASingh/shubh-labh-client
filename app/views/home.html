@@ -7,23 +7,23 @@
 			<div class="col-xs-6 img-icon buy" style=""><span>Sale</span></div>
 		</a>
 		<a href="#payment">
-			<div class="col-xs-6 img-icon card" style=""><span>Payment</span></div>
+			<div class="col-xs-6 img-icon card" style=""><i class="fa fa-check fa-2x" aria-hidden="true" ng-class = "{ 'done': selectedData.payment.get().length}"></i><span>Payment</span></div>
 		</a>
 	</div>
 	<div class="row row-custom">
 		<a href="#saving">
-			<div class="col-xs-6 img-icon money" style=""><span>Saving</span></div>
+			<div class="col-xs-6 img-icon money" style=""><i class="fa fa-check fa-2x" aria-hidden="true" ng-class = "{ 'done': selectedData.save.get().length}"></i><span>Saving</span></div>
 		</a>
 		<a href="#expenses">
-			<div class="col-xs-6 img-icon cash" style=""><span>Other Expenses</span></div>
+			<div class="col-xs-6 img-icon cash" style=""><i class="fa fa-check fa-2x" aria-hidden="true" ng-class = "{ 'done': selectedData.other.get().length}"></i><span>Other Expenses</span></div>
 		</a>
 	</div>
 	<div class="row row-custom">
 		<a href="#cash">
-			<div class="col-xs-6 img-icon rupee" style=""><span>Cash</span></div>
+			<div class="col-xs-6 img-icon rupee" style=""><i class="fa fa-check fa-2x" aria-hidden="true" ng-class = "{ 'done': selectedData.cash.get().length}"></i><span>Cash</span></div>
 		</a>
 		<a href="#cash">
-			<div class="col-xs-6 img-icon checked" style=""><span>Bills</span></div>
+			<div class="col-xs-6 img-icon checked" style=""><i class="fa fa-check fa-2x" aria-hidden="true" ng-class = "{ 'done': selectedData.quick.get().length}"></i><span>Bills</span></div>
 		</a>
 	</div>
 </div>

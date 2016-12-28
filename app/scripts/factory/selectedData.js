@@ -11,7 +11,7 @@
  angular.module('clientApp')
   .factory('selectedData', function() {
         var data = {};
-        this.sale = 0; this.save = 0 ; this.cash = 0 ; this.payment=0;
+        this.sale = 0; this.save = 0 ; this.cash = 0 ; this.payment=0 , this.other=0;
         data.sales =  {
                 set : function(data){
                     this.sale = data;
@@ -21,7 +21,7 @@
                 }.bind(this)
         };
 
-        data.save =  {
+        data.save =  { 
                 set : function(data){
                     this.save = data;
                 }.bind(this),
@@ -50,6 +50,15 @@
                 }.bind(this)
             };
         
+        data.other = {
+            
+                set : function(data){
+                    this.other = data;
+                }.bind(this),
+                get : function(){
+                    return this.other;
+                }.bind(this)
+            };
 
         data.quick = {
                 set : function(cash, payment, save){

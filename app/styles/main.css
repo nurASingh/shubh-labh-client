@@ -368,3 +368,72 @@ body {
     margin-left: 40px; 
   }
 }
+
+.load{
+      height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.33);
+    z-index: 9999999;
+    top: 0%;
+        left: 0%;
+}
+
+.load-screen {
+    -webkit-animation: mymove 2s ; /* Safari 4.0 - 8.0 */
+    animation: mymove 2s ;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    0%   {left: 100%;}
+    100% {left: 0%;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+      0%   {left: 100%;}
+    100% {left: 0%;}
+}
+
+.load-screen  >i{
+  position: absolute;
+  top:45%;
+  left:45%;
+}
+
+.home .img-icon i{
+    left: 75%;
+    position: absolute;
+    top: 5%;
+    color:gray;
+    opacity: 0.3;
+}
+
+.home .img-icon .done{
+  color:#27ae60;
+  opacity: 1.0;
+}
+
+.preview{
+      position: absolute;
+    bottom: 0px;
+    height: 100px;
+    width: 200px;
+    content: no-close-quote;
+    background-color: rgba(0, 0, 0, 0.63);
+    color: white;
+    left: 20%;
+}
+
+.preview :nth-child(1){
+    top: 10%;
+    position: absolute;
+    left: 15%;
+}
+
+.preview :nth-child(3){
+    top: 40%;
+    position: absolute;
+    left: 15%;
+}
