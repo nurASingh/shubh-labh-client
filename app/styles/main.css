@@ -437,3 +437,10 @@ body {
     position: absolute;
     left: 15%;
 }
+
+.date-custom{
+    float: left;
+    width: 62%;
+    margin-left: 10px;
+    margin-right: 10px;
+}

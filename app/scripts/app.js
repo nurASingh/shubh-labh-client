@@ -15,8 +15,12 @@ angular
     'ngRoute',
     'ngTouch'
 
-  ])
+  ]).run(function (){
+   console.log('run');
+   
+  })
   .config(function ($routeProvider, $httpProvider) {
+    console.log('config');
     function setUserData(selectedData,$location) {
       if (window.sessionStorage.getItem('response')) {
         var response = angular.fromJson(window.sessionStorage.getItem('response'));
@@ -26,6 +30,7 @@ angular
         $location.path('/login');
       }
     }
+    
     $routeProvider
       .when('/', {
         templateUrl: 'views/login.html',
