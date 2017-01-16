@@ -1,42 +1,53 @@
 <form name="metaForm" class="form-meta">
-	<ul >
-		<li class="shubh-labh-panel" ng-repeat="item  in metadata track by $index" ng-init="i = $index ; payload[i] = {}" ng-if="item.type == '3item'">			
+	<div class="" ng-show="submit">
+		<div class="alert alert-success" ng-show="!failed">
+			<strong>Success!</strong> Data saved.
+			<a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
+		</div>
+		<div class="alert alert-danger" ng-show="failed">
+			<strong>Failed! </strong> Try again.
+			<a href="" class="close" data-dismiss="alert" aria-label="close">×</a>
+		</div>
+	</div>
+	<ul>
+		<li class="shubh-labh-panel" ng-repeat="item  in metadata track by $index" ng-init="i = $index ; payload[i] = {}" ng-if="item.type == '3item'">
 			<div ng-repeat="field in item.fields">
 				<div class="item-box text" ng-if="field.type=='text'">
 					<label>{{field.label}} </label>
-					<input ng-readonly="isedit.val" type="text" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
+					<input ng-readonly="isedit.val" type="text" ng-model="payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 				<div class="item-box number" ng-if="field.type=='number'">
 					<label>{{field.label}} </label>
-					<input ng-readonly="isedit.val" type="number" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
+					<input ng-readonly="isedit.val" type="number" ng-model="payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 			</div>
-			<div class="btn-add-more" ng-init = "item.add = true">
-				<button type="button" ng-click = "add(i,item)" class="btn btn-default btn-sm " ng-if="item.add">
+			<div class="btn-add-more" ng-init="item.add = true">
+				<button type="button" ng-click="add(i,item)" class="btn btn-default btn-sm " ng-if="item.add">
           			<i class="fa fa-plus" aria-hidden="true"></i>
         		</button>
-				<button type="button" ng-click = "remove(i,item)" class="btn btn-default btn-sm " ng-if="!item.add">
+				<button type="button" ng-click="remove(i,item)" class="btn btn-default btn-sm " ng-if="!item.add">
           			<i class="fa fa-times" aria-hidden="true"></i>
         		</button>
 			</div>
 		</li>
 
-		<li class="shubh-labh-panel custom-height"  ng-repeat="item  in metadata track by $index" ng-init="i = $index ; payload[i] = {}" ng-if="item.type == '2item'">			
+		<li class="shubh-labh-panel custom-height" ng-repeat="item  in metadata track by $index" ng-init="i = $index ; payload[i] = {}"
+			ng-if="item.type == '2item'">
 			<div ng-repeat="field in item.fields">
 				<div class="item-box number " ng-if="field.type=='text'">
 					<label>{{field.label}} </label>
-					<input ng-readonly="isedit.val" type="{{field.type}}" ng-model = "payload[i][field.id]" placeholder="{{field.placeholder}}">
+					<input ng-readonly="isedit.val" type="{{field.type}}" ng-model="payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 				<div class="item-box number" ng-if="field.type=='number'">
 					<label>{{field.label}} </label>
-					<input ng-readonly="isedit.val" type="{{field.type}}" ng-model = "payload[i][field.id]"  placeholder="{{field.placeholder}}">
+					<input ng-readonly="isedit.val" type="{{field.type}}" ng-model="payload[i][field.id]" placeholder="{{field.placeholder}}">
 				</div>
 			</div>
-			<div class="btn-add-more" ng-init = "item.add = true">
-				<button type="button" ng-click = "add(i,item)" class="btn btn-default btn-sm " ng-if="item.add">
+			<div class="btn-add-more" ng-init="item.add = true">
+				<button type="button" ng-click="add(i,item)" class="btn btn-default btn-sm " ng-if="item.add">
           			<i class="fa fa-plus" aria-hidden="true"></i>
         		</button>
-				<button type="button" ng-click = "remove(i,item)" class="btn btn-default btn-sm " ng-if="!item.add">
+				<button type="button" ng-click="remove(i,item)" class="btn btn-default btn-sm " ng-if="!item.add">
           			<i class="fa fa-times" aria-hidden="true"></i>
         		</button>
 			</div>

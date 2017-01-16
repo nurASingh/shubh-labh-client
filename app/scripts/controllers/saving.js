@@ -8,14 +8,22 @@
  * Controller of the clientApp
  */
 angular.module('clientApp')
-  .controller('SavingCtrl', function ($scope, selectedData, saving,ajaxService) {
+  .controller('SavingCtrl', function ($scope, selectedData, saving, ajaxService) {
     $scope.metadata = saving;
-    $scope.isedit = {val : false};
+    $scope.isedit = { val: false };
     $scope.payload = [{
       type: "",
       amount: '',
     }];
-      $scope.clear = function () {
+
+    $scope.date = new Date();
+    $('#datetimepicker1').datetimepicker({format : "DD/MM/YYYY"})
+      .on('dp.change', function (ev) {
+        $scope.date = new Date(ev.date._d);
+        console.log($scope.date);
+        console.log(new Date($scope.date));
+      });
+    $scope.clear = function () {
       console.log($scope.metadata);
       delete $scope.metadata;
       $scope.metadata = saving;
@@ -31,18 +39,22 @@ angular.module('clientApp')
       // http call
       var date = new Date();
       var dataTosend = {
-        date : date,
-        comment :'this is comment',
-        payments :  $scope.payload
+        date: date,
+        comment: 'this is comment',
+        payments: $scope.payload
 
       };
-      ajaxService.postSaving({saving : dataTosend}, function(res){
+      ajaxService.postSaving({ saving: dataTosend }, function (res) {
         console.log(res);
         $scope.isedit.val = true;
-        selectedData.save.set( $scope.payload);
-      }, function(err){
+        selectedData.save.set($scope.payload);
+        $scope.submit = true;
+        $scope.failed = false;
+      }, function (err) {
         $scope.isedit.val = false;
         console.log(err);
+        $scope.submit = true;
+        $scope.failed = true;
       });
     };
   });

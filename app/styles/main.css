@@ -440,7 +440,15 @@ body {
 
 .date-custom{
     float: left;
-    width: 62%;
+    width: 55%;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+.dashboard-items{
+      max-width: 100%;
+    height: auto;
+    border-radius: 50%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
 }

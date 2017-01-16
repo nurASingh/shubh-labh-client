@@ -15,6 +15,12 @@ angular.module('clientApp')
       payment: ''
     }];
 
+    $scope.date = new Date();
+    $('#datetimepicker1').datetimepicker({format : "DD/MM/YYYY"})
+      .on('dp.change', function (ev) {
+        $scope.date = ev.date._d;
+      });
+
     $scope.save = function () {
       // http call
       var date = new Date();
@@ -38,9 +44,13 @@ angular.module('clientApp')
 
       ajaxService.postCash({ cash: dataTosend }, function (res) {
         console.log(res);
-        selectedData.cash.set( $scope.payload);
+        selectedData.cash.set($scope.payload);
+        $scope.submit = true;
+        $scope.failed = false;
       }, function (err) {
         console.log(err);
+        $scope.submit = true;
+        $scope.failed = true;
       });
     };
   });

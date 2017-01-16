@@ -14,7 +14,9 @@ angular.module('clientApp')
             scope: {
                 metadata: "=",
                 payload: '=',
-                isedit: '='
+                isedit: '=',
+                submit: '=',
+                failed:'='
             },
             templateUrl: '../views/metaForm.html',
             link: function ($scope, elem, attrs) {
@@ -29,6 +31,7 @@ angular.module('clientApp')
 
                 $scope.remove = function(index){
                     $scope.metadata.splice(index,1)
+                     $scope.payload.splice(index,1)
                     $scope.isEdit = true;
                 };
 

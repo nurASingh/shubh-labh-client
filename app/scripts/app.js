@@ -127,6 +127,16 @@ angular
           }
         }
       })
+      .when('/dashboard', {
+        templateUrl: 'views/dashboard.html',
+        controller: 'SaleCtrl',
+        controllerAs: 'about',
+        resolve: {
+          data: function (selectedData,$location) {
+            setUserData(selectedData,$location);
+          }
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -14,6 +14,13 @@ angular.module('clientApp')
       sale: $scope.totalSale
     }];
 
+    $scope.date = new Date();
+    $('#datetimepicker1').datetimepicker({ format: "DD/MM/YYYY" })
+      .on('dp.change', function (ev) {
+        $scope.date = new Date(ev.date._d);
+        console.log($scope.date);
+        console.log(new Date($scope.date));
+      });
     $scope.totalSale = 0;
     $scope.totalCash = 1200;
     $scope.totalSaving = 100;

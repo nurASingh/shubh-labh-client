@@ -1,5 +1,13 @@
+  <h4>Other Expenses</h4>
  <div class= "btn-header">
+      
      <button style="float: left" ng-click="clear()" class="btn btn-primary">Clear</button>
-     <button style="float: right" ng-click="save()" class="btn btn-primary">Done</button>
+     <div  class='input-group date date-custom' id='datetimepicker1'>
+                    <input type='text' class="form-control" ng-model="date"/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+     <button style="float: left"  ng-click="save()" class="btn btn-primary">Done</button>
  </div>
- <meta-form metadata= metadata payload = payload isedit= isedit></meta-form>
+ <meta-form metadata= metadata payload = payload isedit= isedit failed = failed  submit = submit></meta-form>
