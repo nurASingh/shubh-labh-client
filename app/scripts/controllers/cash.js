@@ -21,16 +21,6 @@ angular.module('clientApp')
         $scope.date = ev.date._d;
       });
 
-    $scope.save = function () {
-      // http call
-      var date = new Date();
-      var dataTosend = {
-        date: date,
-        comment: 'this is comment',
-        payments: $scope.payload
-
-      };
-
       $scope.clear = function () {
         console.log($scope.metadata);
         delete $scope.metadata;
@@ -41,6 +31,18 @@ angular.module('clientApp')
           payment: ''
         }];
       };
+
+    $scope.save = function () {
+      // http call
+      var date = new Date($scope.date);
+       var dateString = (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear();
+      var dataTosend = {
+        date: dateString,
+        comment: 'this is comment',
+        amount: $scope.payload
+      };
+
+    
 
       ajaxService.postCash({ cash: dataTosend }, function (res) {
         console.log(res);

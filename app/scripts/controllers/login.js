@@ -41,7 +41,7 @@ angular.module('clientApp')
       };
 
       var errorCallback = function (err) {
-        errorMessage = err;
+        $scope.errorMessage = err.err.message || err;
       };
 
       ajaxService.login(

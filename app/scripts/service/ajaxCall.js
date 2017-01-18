@@ -56,11 +56,11 @@ angular.module('clientApp')
     };
 
     this.postSaving = function (params, successCallback, errorCallback) {
-      xhr.post(context.getSaving,selectedData.header.get(),params,successCallback, errorCallback);
+      xhr.post(context.postSaving,selectedData.header.get(),params,successCallback, errorCallback);
     };
 
     this.updateSaving = function (params, successCallback, errorCallback) {
-      xhr.put(context.getSaving,selectedData.header.get(),params,successCallback, errorCallback);
+      xhr.put(context.updateSaving,selectedData.header.get(),params,successCallback, errorCallback);
     };
 
     this.getExpense = function (params, successCallback, errorCallback) {
@@ -68,11 +68,11 @@ angular.module('clientApp')
     };
 
     this.postExpense = function (params, successCallback, errorCallback) {
-      xhr.post(context.getExpense,selectedData.header.get(),params,successCallback, errorCallback);
+      xhr.post(context.postExpense,selectedData.header.get(),params,successCallback, errorCallback);
     };
 
     this.updateExpense = function (params, successCallback, errorCallback) {
-      xhr.put(context.getExpense,selectedData.header.get(),params,successCallback, errorCallback);
+      xhr.put(context.updateExpense,selectedData.header.get(),params,successCallback, errorCallback);
     };
 
     this.getCash = function (params, successCallback, errorCallback) {

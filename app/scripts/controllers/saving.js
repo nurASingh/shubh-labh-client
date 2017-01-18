@@ -23,6 +23,11 @@ angular.module('clientApp')
         console.log($scope.date);
         console.log(new Date($scope.date));
       });
+
+
+      
+
+
     $scope.clear = function () {
       console.log($scope.metadata);
       delete $scope.metadata;
@@ -37,12 +42,12 @@ angular.module('clientApp')
 
     $scope.save = function () {
       // http call
-      var date = new Date();
+      var date = new Date($scope.date);
+  var dateString = (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear();
       var dataTosend = {
-        date: date,
+        date: dateString,
         comment: 'this is comment',
-        payments: $scope.payload
-
+        amount: $scope.payload
       };
       ajaxService.postSaving({ saving: dataTosend }, function (res) {
         console.log(res);

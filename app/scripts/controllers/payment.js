@@ -48,9 +48,10 @@ angular.module('clientApp')
 
     $scope.save = function () {
       // http call
-      var date = new Date();
+      var date = new Date($scope.date);
+       var dateString = (date.getMonth()+1) + '/' + date.getDate() + '/' + date.getFullYear();
       var dataTosend = {
-        date: $scope.date,
+        date: dateString,
         comment: 'this is comment',
         payments: $scope.payload
       };

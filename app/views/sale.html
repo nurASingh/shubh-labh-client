@@ -1,3 +1,5 @@
+
+<h4>Sales</h4>
 <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Sale Summary</div>
@@ -49,7 +51,7 @@
 </div>
 <div class= "sale-cash">
     <span>Today's Cash</span>
-    <input type="number" value="2400" ng-model="totalCash"/>
+    <input type="number" value="2400" readonly disabled="true" ng-model="totalCash"/>
 </div>
 
 <div class= "total-sale">
@@ -57,6 +59,5 @@
     <input type="number" value="{{totalCash + totalSaving + totalExpenses + totalPayment}}"  readonly disabled="true"/>
 </div>
   <div class= "btn-header">
-     <button style="float: left" ng-click="clear()" class="btn btn-primary">Clear</button>
-     <button style="float: right" ng-click="save()" class="btn btn-primary">Done</button>
+     <a style="left:150px;position: absolute"  class="btn btn-primary">OK</a>
  </div>

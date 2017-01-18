@@ -452,3 +452,8 @@ body {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
+  h4 {
+    text-align: center;
+    background: rgba(51, 122, 183, .5);
+    padding: 10px;
+  }
